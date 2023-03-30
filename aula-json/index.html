@@ -6,16 +6,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+</style>
 <body>
-
+    <div id="estados" class="divEstados">
+        <table>
+                <tr>
+                    <th>Estados</th>
+                </tr>
+        </table>
+        <table id="valores"></table>
+        <button id="listar">Listar Estados</button>
+    </div>
+    
+    
     <script>
-        fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then((response) => {
-            response.json().then((estados) => {
-                estados.map((estados) => {
-                    
-                })
-            })
-        })
+        const url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados'
+        
+        async function lista(){
+            const response = await fetch(url);
+            const listaEstados = await response.json();
+            return listaEstados;
+        }
+
+        lista().then(listaEstados => {
+            const valores = document.getElementById('valores');
+            valores.innerHTML = "";
+            const listagem = document.getElementById('listar');
+            listagem.onclick = () => {
+                if (valores.innerHTML === ""){
+                for (let i = 0; i < 27; i++){
+                valores.innerHTML += `<tr>
+                                        <td>
+                                        ${listaEstados[i].nome}
+                                        </td> 
+                                    </tr>`;
+            }
+        } else {
+            valores.innerHTML = "";
+        }
+        }
+    });
+
     </script>
 </body>
 </html>
