@@ -8,6 +8,14 @@
 </head>
 <body>
 
-    <script></script>
+    <script>
+        fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados').then((response) => {
+            response.json().then((estados) => {
+                estados.map((estados) => {
+                    
+                })
+            })
+        })
+    </script>
 </body>
 </html>
