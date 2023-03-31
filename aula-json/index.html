@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +8,52 @@
     <title>Document</title>
 </head>
 <style>
+    body {
+        display: flex;
+    }
+
+    table {
+        text-align: left;
+    }
+
+    button {
+        height: 25px;
+    }
 </style>
+
 <body>
     <div id="estados" class="divEstados">
         <table>
-                <tr>
-                    <th>Estados</th>
-                </tr>
+            <tr>
+                <th>Estados</th>
+            </tr>
         </table>
         <table id="valores"></table>
-        <button id="listar">Listar Estados</button>
+        <table id="regiao" style="display: none;">
+            <tr>
+                <th>Norte</th>
+            </tr>
+            <tr>
+                <th>Nordeste</th>
+            </tr>
+            <tr>
+                <th>Centro-Oeste</th>
+            </tr>
+            <tr>
+                <th>Sudeste</th>
+            </tr>
+            <tr>
+                <th>Sul</th>
+            </tr>
+        </table>
     </div>
-    
-    
+    <button id="listar">Listar Estados</button>
+
+
     <script>
         const url = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados'
-        
-        async function lista(){
+
+        async function lista() {
             const response = await fetch(url);
             const listaEstados = await response.json();
             return listaEstados;
@@ -33,21 +63,48 @@
             const valores = document.getElementById('valores');
             valores.innerHTML = "";
             const listagem = document.getElementById('listar');
+
             listagem.onclick = () => {
-                if (valores.innerHTML === ""){
-                for (let i = 0; i < 27; i++){
-                valores.innerHTML += `<tr>
+                if (valores.innerHTML === "") {
+                    for (let i = 0; i < 27; i++) {
+                        valores.innerHTML += `<tr>
                                         <td>
                                         ${listaEstados[i].nome}
                                         </td> 
                                     </tr>`;
+                    }
+                } else {
+                    valores.innerHTML = "";
+                }
             }
-        } else {
-            valores.innerHTML = "";
-        }
-        }
-    });
+
+            const regiao = document.getElementById('regiao');
+
+            for (let index = 0; index < 27; index++) {
+                switch (listaEstados[index].regiao.sigla) {
+                    case 'N':
+                        console.log(listaEstados[index].nome);
+                        break;
+                    case 'NE':
+                        console.log(listaEstados[index].nome);
+                        break;
+                    case 'CO':
+                        console.log(listaEstados[index].nome);
+                        break;
+                    case 'SE':
+                        console.log(listaEstados[index].nome);
+                        break;
+                    case 'S':
+                        console.log(listaEstados[index].nome);
+                        break;
+                    default:
+                        break;
+                }
+                
+            }
+        });
 
     </script>
 </body>
+
 </html>
