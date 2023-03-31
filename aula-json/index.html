@@ -6,48 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    body {
-        display: flex;
-    }
-
-    .divUF {
-        display: block;
-        margin: 7px 5px;
-    }
-
-    table {
-        text-align: left;
-    }
-
-    td {
-        border: 1px solid black;
-        padding: 2px;
-        margin: 0;
-        width: 180px;
-    }
-
-    button {
-        height: 25px;
-        margin: 5px;
-    }
-
-    .divEstados {
-        width: 15vw;
-    }
-
-    input {
-        height: 15px;
-    }
-
-    .nomeEstado {
-        margin-left: 170px;
-    }
-</style>
 
 <body>
-    
     <div id="estados" class="divEstados" style="display: none;">
         <table>
             <tr>
@@ -76,13 +38,13 @@
     </div>
     <button id="listar">Listar Estados</button>
     <button id="agrupar">Agrupar por Região</button>
-</div>
+    </div>
     <br>
     <div class="divUF">
-    <label for="UF">Insira a UF de um estado:</label>
-    <input type="text" id="UF" value="">
-    <h3 id="resUF" class="nomeEstado"></h3>
-</div>
+        <label for="UF">Insira a UF de um estado:</label>
+        <input type="text" id="UF" value="">
+        <h3 id="resUF" class="nomeEstado"></h3>
+    </div>
     <script src="main.js"></script>
 </body>
 
