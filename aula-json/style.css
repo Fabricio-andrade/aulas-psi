@@ -1,0 +1,36 @@
+body {
+    display: flex;
+}
+
+.divUF {
+    display: block;
+    margin: 7px 5px;
+}
+
+table {
+    text-align: left;
+}
+
+td {
+    border: 1px solid black;
+    padding: 2px;
+    margin: 0;
+    width: 180px;
+}
+
+button {
+    height: 25px;
+    margin: 5px;
+}
+
+.divEstados {
+    width: 15vw;
+}
+
+input {
+    height: 15px;
+}
+
+.nomeEstado {
+    margin-left: 170px;
+}
