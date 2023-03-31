@@ -25,7 +25,7 @@
         border: 1px solid black;
         padding: 2px;
         margin: 0;
-        width: 150px;
+        width: 180px;
     }
 
     button {
@@ -107,7 +107,7 @@
                     for (let i = 0; i < 27; i++) {
                         valores.innerHTML += `<tr>
                                         <td>
-                                        ${listaEstados[i].nome}
+                                        ${listaEstados[i].nome} - ${listaEstados[i].sigla}
                                         </td> 
                                     </tr>`;
                     }
@@ -151,31 +151,31 @@
                             case 'N':
                                 var regiao = document.getElementById('norte');
                                 regiao.innerHTML += `<tr>
-                                                <td>${listaEstados[index].nome}</td>
+                                                <td>${listaEstados[index].nome} - ${listaEstados[index].sigla}</td>
                                             </tr>`
                                 break;
                             case 'NE':
                                 var regiao = document.getElementById('nordeste');
                                 regiao.innerHTML += `<tr>
-                                                <td>${listaEstados[index].nome}</td>
+                                                <td>${listaEstados[index].nome} - ${listaEstados[index].sigla}</td>
                                             </tr>`
                                 break;
                             case 'CO':
                                 var regiao = document.getElementById('centro');
                                 regiao.innerHTML += `<tr>
-                                                <td>${listaEstados[index].nome}</td>
+                                                <td>${listaEstados[index].nome} - ${listaEstados[index].sigla}</td>
                                             </tr>`
                                 break;
                             case 'SE':
                                 var regiao = document.getElementById('sudeste');
                                 regiao.innerHTML += `<tr>
-                                                <td>${listaEstados[index].nome}</td>
+                                                <td>${listaEstados[index].nome} - ${listaEstados[index].sigla}</td>
                                             </tr>`
                                 break;
                             case 'S':
                                 var regiao = document.getElementById('sul');
                                 regiao.innerHTML += `<tr>
-                                                <td>${listaEstados[index].nome}</td>
+                                                <td>${listaEstados[index].nome} - ${listaEstados[index].sigla}</td>
                                             </tr>`
                                 break;
                             default:
